@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="m-4">
+        <h1 class="border-bottom pb-3 mb-4">Registration Form</h1>
+        <form [formGroup] = "form" (ngSubmit) = "submit()">
+            
+            <div class="row mb-3 form-group">
+                <label class="col-sm-3 col-form-label" for="firstName">First Name:</label>
+                <div class="col-sm-9">
+                <input
+                    formControlName="FirstName"
+                    id="FirstName"
+                    type="text"
+                    class="form-control"
+                    placeholder="First Name">
+                <div *ngIf="f['FirstName'].touched && f['FirstName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['FirstName'].errors && f['FirstName'].errors['required']">Name is required.</div>
+                    <div *ngIf="f['FirstName'].errors && f['FirstName'].errors['minlength']">Name should be 3 character.</div>
+                </div>
+            </div>
+            </div>
+
+            <div class="row mb-3 form-group">
+                <label class="col-sm-3 col-form-label" for="lastName">Last Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="lastName" 
+                    name = "lastName" formControlName = "lastName"
+                    placeholder="Last Name" >
+
+                    <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required.</div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3 form-group">
+                <label class="col-sm-3 col-form-label" for="email">Email Address:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="email" 
+                    formControlName = "email" name="email"
+                    placeholder="Email Address" >
+
+                    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                        <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3 form-group">
+                <label class="col-sm-3 col-form-label" for="emailAddress">Password:</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="password" 
+                    formControlName = "password" name="password"
+                    placeholder="Password" 
+                    [ngClass]="{ 'is-invalid': f['password'].invalid &&  f['password'].touched}">
+
+                    <div *ngIf="f['password'].touched && f['password'].invalid" class="invalid-feedback">
+                        <div *ngIf="f['password'].errors && f['password'].errors['required']">password is required.</div>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label" for="phoneNumber">Mobile Number:</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="phoneNumber" 
+                    name = "phoneNumber" formControlName = "phoneNumber"
+                    placeholder="Phone Number" >
+                    <div *ngIf="f['phoneNumber'].touched && f['phoneNumber'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors['required']">Email is required.</div>
+                        
+                    </div>
+                </div>
+            </div>  
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Date of Birth:</label>
+                <div class="col-sm-3">
+                    <select class="form-select"  
+                    name = "dateOfBirth" formControlName = "dateOfBirth">
+                    <option *ngFor = "let date of dates" [value]="date">{{date}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-select"  
+                    name = "MonthOfBirth" formControlName = "MonthOfBirth">
+                    <option *ngFor = "let month of months" [value]="month.value">{{month.name}}</option>
+                    </select>
+                    <div *ngIf="f['MonthOfBirth'].touched && f['MonthOfBirth'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['MonthOfBirth'].errors && f['MonthOfBirth'].errors['required']">MonthOfBirth is required.</div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <input type="number" class="form-control" id="year" 
+                    name = "year" formControlName = "year"
+                    placeholder="year" >
+                    <div *ngIf="f['year'].touched && f['year'].invalid" class="alert alert-danger">
+                        <div *ngIf="f['year'].errors && f['year'].errors['required']">Year is required.</div>
+                        
+                    </div>
+                </div>
+                </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-9 offset-sm-3">
+                    <input type="submit" class="btn btn-primary" [disabled]="form.invalid" value="Submit">
+                    <input type="reset" class="btn btn-secondary ms-2" value="Reset">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

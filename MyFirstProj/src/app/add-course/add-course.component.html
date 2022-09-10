@@ -1,0 +1,24 @@
+<div class="container">
+    <form #courseForm = "ngForm" (ngSubmit) = "onSubmit()">
+        <label>Email</label>
+        <input type="text" name="name" class="form-control" required 
+        [(ngModel)] = "course.name" #name="ngModel">
+
+        <div *ngIf = "name.touched && !name.valid" class="alert alert-danger">
+            <p *ngIf = "name.errors && name.errors['required']">Name is required</p>
+        </div>
+
+        <label>Password</label>
+        <input type="text" name="author" class="form-control mb-3" required 
+        [(ngModel)] = "course.author" #author="ngModel">
+        <div *ngIf = "author.touched && !author.valid" class="alert alert-danger">
+            <p *ngIf = "author.errors && author.errors['required']">author is required</p>
+            
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled] = "!courseForm.valid">Submit</button>
+    </form>
+
+
+</div>
+
