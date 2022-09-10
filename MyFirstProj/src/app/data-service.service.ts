@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataServiceService {
   private url = "http://localhost:8080";
+  headers:HttpHeaders;
 
-  constructor(private http_client:HttpClient) { }
+  
+
+  constructor(private http_client:HttpClient) {
+    this.headers= new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
+   }
 
   checkLogin(user:any){
     alert("service called");
@@ -25,6 +32,12 @@ export class DataServiceService {
   }
   addCourse(course:any){
     return this.http_client.post(this.url + '/courses', course);
+  }
+
+  getCourseDetailsById(id:any){
+    const params = new HttpParams().set("id", id);
+    return this.http_client.get(this.url + '/Getcourses',{'headers':this.headers,'params':params})
+
   }
 
 

@@ -17,6 +17,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { RegisterationFormComponent } from './registeration-form/registeration-form.component';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
     AddCourseComponent,
     CourseDetailComponent,
     RegisterationFormComponent,
-    UserNavbarComponent
+    UserNavbarComponent,
+    
   ],
   imports: [
     BrowserModule,

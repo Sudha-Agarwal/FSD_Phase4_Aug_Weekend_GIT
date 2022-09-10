@@ -12,8 +12,9 @@ export class CourseComponent implements OnInit {
   constructor(private ds: DataServiceService) { }
 
   ngOnInit(): void {
-    this.ds.getCourse().subscribe(response => this.courses = response);
-
+    this.ds.getCourse().subscribe( {next: response => this.courses = response,
+      error: err => console.log(err),
+      complete: ()=>console.log("done")});
   }
 
 }

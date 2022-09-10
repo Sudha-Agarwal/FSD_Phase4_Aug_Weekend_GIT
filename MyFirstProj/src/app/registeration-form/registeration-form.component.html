@@ -43,6 +43,7 @@
                     <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
                         <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
                         <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+                        <p *ngIf="f['email'].errors && f['email'].errors['emailDomain']">Email must be on gmail.com</p>
                     </div>
                 </div>
             </div>
