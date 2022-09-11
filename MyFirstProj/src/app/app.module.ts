@@ -16,6 +16,9 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { RegisterationFormComponent } from './registeration-form/registeration-form.component';
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { LaptopListComponent } from './product-list/laptop-list/laptop-list.component';
+
 
 
 @NgModule({
@@ -31,6 +34,8 @@ import { UserNavbarComponent } from './user-navbar/user-navbar.component';
     CourseDetailComponent,
     RegisterationFormComponent,
     UserNavbarComponent,
+    ProductListComponent,
+    LaptopListComponent,
     
   ],
   imports: [
