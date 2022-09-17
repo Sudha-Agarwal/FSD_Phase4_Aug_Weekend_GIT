@@ -1,0 +1,24 @@
+.boldClass{
+    font-weight:bold;
+}
+
+.italicClass{
+    font-style:italic;
+}
+
+.colorClass{
+    color:green;
+    
+}
+
+.redText{
+    color: red;
+}
+
+.blueText{
+    color:blue;
+}
+
+.size20{
+    font-size: 40px;
+}

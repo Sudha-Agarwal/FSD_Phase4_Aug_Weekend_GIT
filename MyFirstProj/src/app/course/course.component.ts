@@ -8,7 +8,7 @@ import { DataServiceService } from '../data-service.service';
 })
 export class CourseComponent implements OnInit {
   courses:any;
-
+  courses1:any;
   constructor(private ds: DataServiceService) { }
 
   ngOnInit(): void {

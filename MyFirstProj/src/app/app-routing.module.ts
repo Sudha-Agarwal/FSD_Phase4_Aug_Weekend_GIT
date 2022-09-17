@@ -6,6 +6,7 @@ import { CourseComponent } from './course/course.component';
 import { HomeComponent } from './home/home.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ModelFormComponent } from './model-form/model-form.component';
+import { PipesComponent } from './pipes/pipes.component';
 import { RegisterationFormComponent } from './registeration-form/registeration-form.component';
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'courses', component:CourseComponent},
   {path: 'add-course', component:AddCourseComponent},
   {path: 'course-details/:id', component: CourseDetailComponent},
+  {path: 'userList', component:PipesComponent},
   {path: "**", component: HomeComponent}
 ];
 

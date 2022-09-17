@@ -1,0 +1,26 @@
+<p [class] = "classesToApply">All Class binding</p>
+
+<p [class.boldClass] = "isBold">Bold Class binding</p>
+
+
+
+
+<p [ngClass] = "['redText','size20']">Welcome</p>
+
+
+
+<p [ngClass] = "{ redText: true, size20: true}"> Hello World </p>
+
+<div [ngClass]='AddCSSClasses'>ng Class</div>
+
+<!--
+<p [class.blueText]="true">{{title}}</p>
+<p [ngClass] = "['redText','size20']">Welcome </p>
+<p [style.color] = "titleStyle">Style Binding</p>
+<p [style.color] = "titleStyle_exist ? 'red':'green'">Style Binding</p>
+<p [ngStyle] = "TitleStyles">ng Style Binding</p>
+<p [ngStyle] = "{'color':'purple',
+'font-size':'20px',
+'font-weight':'bold'}">ng Style Binding 2</p>
+<button class="btn btn-primary" (click) = "btnClicked()" [disabled] = "isDisabled">Click me</button>
+<img [src] = "imgPath"> -->

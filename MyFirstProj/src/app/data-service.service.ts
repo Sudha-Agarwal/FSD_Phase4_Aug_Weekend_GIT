@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataServiceService {
   private url = "http://localhost:8080";
+
+  private json_url = " https://jsonplaceholder.typicode.com/users";
   headers:HttpHeaders;
 
   
@@ -38,6 +41,10 @@ export class DataServiceService {
     const params = new HttpParams().set("id", id);
     return this.http_client.get(this.url + '/Getcourses',{'headers':this.headers,'params':params})
 
+  }
+
+  getDataforFilterPipe():Observable<any[]>{
+    return this.http_client.get<any[]>(this.json_url);
   }
 
 

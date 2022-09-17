@@ -18,6 +18,11 @@ import { RegisterationFormComponent } from './registeration-form/registeration-f
 import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LaptopListComponent } from './product-list/laptop-list/laptop-list.component';
+import { BindingsComponent } from './bindings/bindings.component';
+import { MyHighlightDirective } from './my-highlight.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { CapitalcasePipe } from './capitalcase.pipe';
+import { FilterPipePipe } from './filter-pipe.pipe';
 
 
 
@@ -36,6 +41,11 @@ import { LaptopListComponent } from './product-list/laptop-list/laptop-list.comp
     UserNavbarComponent,
     ProductListComponent,
     LaptopListComponent,
+    BindingsComponent,
+    MyHighlightDirective,
+    PipesComponent,
+    CapitalcasePipe,
+    FilterPipePipe,
     
   ],
   imports: [

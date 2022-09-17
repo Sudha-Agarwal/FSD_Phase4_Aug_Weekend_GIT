@@ -1,0 +1,37 @@
+<!--https://www.positronx.io/how-to-create-custom-pipe-in-angular-application/-->
+
+<p>The hero's birthday is {{ birthday | date }}</p>
+
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
+
+<p>The hero's birthday is {{ birthday | date:format }}</p>
+
+The chained hero's birthday is
+{{ birthday | date | uppercase}}
+
+
+<div style="text-align:center">
+    <h3> Currency Pipe</h3>
+    <p>{{ itemPrice | currency:'USD':true }}</p>      
+    <p>{{ itemPrice | currency:'EUR':true}}</p>
+    <p>{{ itemPrice | currency:'INR' }}</p>
+  </div>
+
+
+  <div>
+    <label for="filter">Filter by: </label>
+    <input type = "text" [(ngModel)] = "searchText" placeholder="Search course by name">
+  </div>
+
+  <div *ngIf = "usersList$ | async as usersList">
+      
+  <div *ngFor="let user of usersList | filterPipe: searchText : 'name'">
+    <ul>
+      <li>{{ user.name }}</li>
+    </ul>
+  </div>
+  </div>
+
+
+
+  
